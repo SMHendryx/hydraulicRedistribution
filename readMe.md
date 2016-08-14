@@ -3,7 +3,7 @@ Scripts for time-series analysis and regression in order to develop explanations
 
 ![smallMultiples](outputDirectory/Scatter Plot Matrix.png "Scatter Plot Matrix")
 
-![scatter](outputDirectory/Tap Velocity Over Delta Soil Moisture.png "Taproot sap velocity over soil moisture delta (shallow minus deep)")
+![VsOverDelta](outputDirectory/Tap Velocity Over Delta Soil Moisture.png "Taproot sap velocity over soil moisture delta (shallow minus deep)")
 
 ![errorConvergence](outputDirectory/Error Convergence.png "Error convergence from randomForest:")
 
