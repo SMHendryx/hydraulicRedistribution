@@ -1,0 +1,1916 @@
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared
+rsquared
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm) + annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)#
+#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabel = bquote(italic(r)^2 == rsquared)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabel = bquote(italic(r)^2 == rsquared)#
+#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm) + annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)
+ls()
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabel = bquote(italic(r)^2 == rsquared)#
+#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm)#
+#annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabel = bquote(italic(r)^2 == rsquared)#
+#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm)#
+#annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)#
+#
+#mylabel = bquote(italic(R)^2 == .(format(r2, digits = 3)))#
+text(x = 270, y = .65, labels = mylabel)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabel = bquote(italic(r)^2 == rsquared)#
+#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm) + geom_text(x = 270, y = .65, label = mylabel, parse = TRUE)#
+#annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)#
+#
+#mylabel = bquote(italic(R)^2 == .(format(r2, digits = 3)))#
+#text(x = 270, y = .65, labels = mylabel)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabel = bquote(r^2 == rsquared)#
+#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm) + geom_text(x = 270, y = .65, label = mylabel, parse = TRUE)#
+#annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)#
+#
+#mylabel = bquote(italic(R)^2 == .(format(r2, digits = 3)))#
+#text(x = 270, y = .65, labels = mylabel)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabel = as.character(r^2 == rsquared)#
+#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm) + geom_text(x = 270, y = .65, label = mylabel, parse = TRUE)#
+#annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)#
+#
+#mylabel = bquote(italic(R)^2 == .(format(r2, digits = 3)))#
+#text(x = 270, y = .65, labels = mylabel)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabel = as.character("r^2 =", rsquared)#
+#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm) + geom_text(x = 270, y = .65, label = mylabel, parse = TRUE)#
+#annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)#
+#
+#mylabel = bquote(italic(R)^2 == .(format(r2, digits = 3)))#
+#text(x = 270, y = .65, labels = mylabel)
+mylabelprestring <- c("r^2", rsquared)#
+toString(mylabelprestring)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabelprestring <- c("r^2", rsquared)#
+mylabel <- toString(mylabelprestring)#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm) + geom_text(x = 270, y = .65, label = mylabel, parse = TRUE)#
+#annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)#
+#
+#mylabel = bquote(italic(R)^2 == .(format(r2, digits = 3)))#
+#text(x = 270, y = .65, labels = mylabel)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabelprestring <- c("r^2" rsquared)#
+mylabel <- toString(mylabelprestring)#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm) + geom_text(x = 270, y = .65, label = mylabel, parse = TRUE)#
+#annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)#
+#
+#mylabel = bquote(italic(R)^2 == .(format(r2, digits = 3)))#
+#text(x = 270, y = .65, labels = mylabel)
+mylabelprestring
+mylabel
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabelprestring <- c(rsquared)#
+mylabel <- toString(mylabelprestring)#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm) + geom_text(x = 270, y = .65, label = mylabel, parse = TRUE)#
+#annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)#
+#
+#mylabel = bquote(italic(R)^2 == .(format(r2, digits = 3)))#
+#text(x = 270, y = .65, labels = mylabel)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabelprestring <- c(rsquared)#
+mylabel <- toString(mylabelprestring)#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm) + geom_text(x = 270, y = .65, label = mylabel, parse = TRUE) + geom_text(x = 260, y = .65, label = "r squared =", parse = TRUE)#
+#annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)#
+#
+#mylabel = bquote(italic(R)^2 == .(format(r2, digits = 3)))#
+#text(x = 270, y = .65, labels = mylabel)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabelprestring <- c(rsquared)#
+mylabel <- toString(mylabelprestring)#
+lwps <- c("r squared =")#
+labelwords <- toString ("lwps")#
+#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm) + geom_text(x = 270, y = .65, label = mylabel, parse = TRUE) + geom_text(x = 260, y = .65, label = labelwords, parse = TRUE)#
+#annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)#
+#
+#mylabel = bquote(italic(R)^2 == .(format(r2, digits = 3)))#
+#text(x = 270, y = .65, labels = mylabel)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabelprestring <- c(rsquared)#
+mylabel <- toString(mylabelprestring)#
+lwps <- c("r squared =")#
+labelwords <- toString ("lwps")#
+#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm) + geom_text(x = 270, y = .65, label = mylabel, parse = TRUE) + geom_text(x = 265, y = .65, label = labelwords, parse = TRUE)#
+#annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)#
+#
+#mylabel = bquote(italic(R)^2 == .(format(r2, digits = 3)))#
+#text(x = 270, y = .65, labels = mylabel)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabelprestring <- c(rsquared)#
+mylabel <- toString(mylabelprestring)#
+labelwords <- toString ("r squared =")#
+#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm) + geom_text(x = 270, y = .65, label = mylabel, parse = TRUE) + geom_text(x = 267, y = .65, label = labelwords, parse = TRUE)#
+#annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)#
+#
+#mylabel = bquote(italic(R)^2 == .(format(r2, digits = 3)))#
+#text(x = 270, y = .65, labels = mylabel)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabelprestring <- c(rsquared)#
+mylabel <- toString(mylabelprestring)#
+lwps <- c("r squared =")#
+labelwords <- toString (lwps)#
+#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm) + geom_text(x = 270, y = .65, label = mylabel, parse = TRUE) + geom_text(x = 267, y = .65, label = labelwords, parse = TRUE)#
+#annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)#
+#
+#mylabel = bquote(italic(R)^2 == .(format(r2, digits = 3)))#
+#text(x = 270, y = .65, labels = mylabel)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabelprestring <- c(rsquared)#
+mylabel <- toString(mylabelprestring)#
+lwps <- c("r^2=")#
+labelwords <- toString (lwps)#
+#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm) + geom_text(x = 270, y = .65, label = mylabel, parse = TRUE) + geom_text(x = 267, y = .65, label = labelwords, parse = TRUE)#
+#annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)#
+#
+#mylabel = bquote(italic(R)^2 == .(format(r2, digits = 3)))#
+#text(x = 270, y = .65, labels = mylabel)
+labelwords
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabelprestring <- c(rsquared)#
+mylabel <- toString(mylabelprestring)#
+lwps <-"r^2="#
+labelwords <- toString (lwps)#
+#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm) + geom_text(x = 270, y = .65, label = mylabel, parse = TRUE) + geom_text(x = 267, y = .65, label = labelwords, parse = TRUE)#
+#annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)#
+#
+#mylabel = bquote(italic(R)^2 == .(format(r2, digits = 3)))#
+#text(x = 270, y = .65, labels = mylabel)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabelprestring <- c(rsquared)#
+mylabel <- toString(mylabelprestring)#
+lwps <- c("r squared =")#
+labelwords <- toString(lwps)#
+#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm) + geom_text(x = 270, y = .65, label = mylabel, parse = TRUE) + geom_text(x = 267, y = .65, label = labelwords, parse = TRUE)#
+#annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)#
+#
+#mylabel = bquote(italic(R)^2 == .(format(r2, digits = 3)))#
+#text(x = 270, y = .65, labels = mylabel)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabelprestring <- c(rsquared)#
+mylabel <- toString(mylabelprestring)#
+lwps <- c("r squared =")#
+#labelwords <- toString(lwps)#
+#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm) + geom_text(x = 270, y = .65, label = mylabel, parse = TRUE) + geom_text(x = 267, y = .65, label = lwps, parse = TRUE)#
+#annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)#
+#
+#mylabel = bquote(italic(R)^2 == .(format(r2, digits = 3)))#
+#text(x = 270, y = .65, labels = mylabel)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_LST_Day_1km.asc")#
+#
+statistics_NDVI <-read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/moredata/statistics_250m_16_days_NDVI.asc")#
+#
+#dates <- as.Date(statistics_LST_Day$date)#
+#years <- format(dates, format = "%Y")#
+#months <- format(dates, format = "%m")#
+#DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+#statistics_LST_Day$DOY <- DOY#
+m1 <- merge(statistics_LST_Day, statistics_NDVI, by = "date.YYYYDDD.")#
+rsquared=summary(lm(m1$mean~m1$meanNDVI, m1))$r.squared#
+mylabelprestring <- c(rsquared)#
+mylabel <- toString(mylabelprestring)#
+lwps <- c("r squared =")#
+#labelwords <- toString(lwps)#
+#
+qplot(m1$mean, m1$meanNDVI,main="Mean NDVI over Mean Day Land Surface Temperatures in Beaverton, OR", xlab="Mean LST (K)", ylab="Mean NDVI", data=m1)  + geom_point() + geom_smooth(method=lm) + geom_text(x = 270, y = .65, label = mylabel, parse = TRUE) + geom_text(x = 267, y = .65, aes(label=lwps))#
+#annotate(geom="text",x = 270, y = .65, label = mylabel, parse = TRUE)#
+#
+#mylabel = bquote(italic(R)^2 == .(format(r2, digits = 3)))#
+#text(x = 270, y = .65, labels = mylabel)
+summary(lm(m1$mean~m1$meanNDVI, m1))
+summary(lm(m1$mean~m1$meanNDVI, m1))$p-value
+summary(lm(m1$mean~m1$meanNDVI, m1))$p.value
+summary(lm(m1$mean~m1$meanNDVI, m1))$f[3]
+summary(lm(m1$mean~m1$meanNDVI, m1))$f[4]
+summary(lm(m1$mean~m1$meanNDVI, m1))
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values#
+#
+#plot(months,statistics_LST_Day$mean,main="Subset Area Mean value by Months",xlab="Lai_1km", ylab="Months",col="darkgreen", pch=3)#
+#
+#qplot(DOY, statistics_LST_Day$mean, data = Orange, geom = c("point", "smooth"))
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <-ggplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values#
+#
+#plot(months,statistics_LST_Day$mean,main="Subset Area Mean value by Months",xlab="Lai_1km", ylab="Months",col="darkgreen", pch=3)#
+#
+#qplot(DOY, statistics_LST_Day$mean, data = Orange, geom = c("point", "smooth"))
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+#p <-#
+#
+ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean), main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day) #
+#
+#p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean), main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+p
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2)) data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+p
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+p<- p + labs(title = "Average LAI of the Santa Rita Mesquite Savannah from MODIS by DOY over 15 years") +#
+  theme_bw() +#
+#
+ +#
+  labs(#
+    x = "Day Of Year",#
+    y = "Leaf Area Index",#
+    colour = "Cylinders"#
+  )#
+#
+ #theme(axis.text.x = element_text(size = 14),#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+p
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+p<- p + labs(title = "Average LAI of the Santa Rita Mesquite Savannah from MODIS by DOY over 15 years") +#
+  theme_bw() +#
+#
+p <- p+ labs(#
+    x = "Day Of Year",#
+    y = "Leaf Area Index",#
+    colour = "Cylinders"#
+  )#
+#
+ #theme(axis.text.x = element_text(size = 14),#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+p<- p + labs(title = "Average LAI of the Santa Rita Mesquite Savannah from MODIS by DOY over 15 years") +#
+  theme_bw()#
+#
+p <- p+ labs(#
+    x = "Day Of Year",#
+    y = "Leaf Area Index",#
+    colour = "Cylinders"#
+  )#
+#
+ #theme(axis.text.x = element_text(size = 14),#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+p
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+p<- p + labs(title = "Average LAI of the Santa Rita Mesquite Savannah from MODIS by DOY over 15 years") +#
+  theme_bw() + theme(axis.text = element_text(size = 18)#
+#
+p <- p+ labs(#
+    x = "Day Of Year",#
+    y = "Leaf Area Index",#
+    colour = "Cylinders"#
+  )#
+#
+ #theme(axis.text.x = element_text(size = 14),#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+p<- p + labs(title = "Average LAI of the Santa Rita Mesquite Savannah from MODIS by DOY over 15 years") +#
+  theme_bw() + theme(axis.text = element_text(size = 18))#
+#
+p <- p+ labs(#
+    x = "Day Of Year",#
+    y = "Leaf Area Index",#
+    colour = "Cylinders"#
+  )#
+#
+ #theme(axis.text.x = element_text(size = 14),#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+p
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+p<- p + labs(title = "Average LAI of the Santa Rita Mesquite Savannah from MODIS by DOY over 15 years") +#
+  theme_bw() #
+#
+  #theme(axis.text = element_text(size = 18))#
+#
+p <- p+ labs(#
+    x = "Day Of Year",#
+    y = "Leaf Area Index",#
+    colour = "Cylinders"#
+  )#
+#
+ #theme(axis.text.x = element_text(size = 14),#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+p
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+p<- p + labs(title = "Average LAI of the Santa Rita Mesquite Savannah from MODIS by DOY over 15 years") +#
+  theme_bw() + theme(axis.title = element_text(size = 18))#
+#
+p <- p+ labs(#
+    x = "Day Of Year",#
+    y = "Leaf Area Index",#
+    colour = "Cylinders"#
+  )#
+#
+ #theme(axis.text.x = element_text(size = 14),#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+p
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+p<- p + labs(title = "Average LAI of the Santa Rita Mesquite Savannah from MODIS by DOY over 15 years") +#
+  theme_bw() + theme(axis.title = element_text(size = 18)) + theme(title = element_text(size = 20))#
+#
+p <- p+ labs(#
+    x = "Day Of Year",#
+    y = "Leaf Area Index",#
+    colour = "Cylinders"#
+  )#
+#
+p#
+#
+ #theme(axis.text.x = element_text(size = 14),#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+p<- p + labs(title = "Average LAI of the Santa Rita Mesquite Savannah from MODIS by DOY over 15 years") +#
+  theme_bw() + theme(axis.title = element_text(size = 18)) + theme(title = element_text(size = 20))#
+#
+p <- p + labs(#
+    x = "Day Of Year",#
+    y = "Leaf Area Index",#
+    colour = "Cylinders"#
+  )#
+#
+p <- p + geom_smooth(aes(group = 1), formula = y ~ poly(x, 4))   #
+#
+p#
+#
+ #theme(axis.text.x = element_text(size = 14),#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+p<- p + labs(title = "Average LAI of the Santa Rita Mesquite Savannah from MODIS by DOY over 15 years") +#
+  theme_bw() + theme(axis.title = element_text(size = 18)) + theme(title = element_text(size = 20))#
+#
+p <- p + labs(#
+    x = "Day Of Year",#
+    y = "Leaf Area Index",#
+    colour = "Cylinders"#
+  )#
+#
+p <- p + stat_smooth(method = rlm, formula= y ~ ns(x,4))  #
+#
+p#
+#
+ #theme(axis.text.x = element_text(size = 14),#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+p<- p + labs(title = "Average LAI of the Santa Rita Mesquite Savannah from MODIS by DOY over 15 years") +#
+  theme_bw() + theme(axis.title = element_text(size = 18)) + theme(title = element_text(size = 20))#
+#
+p <- p + labs(#
+    x = "Day Of Year",#
+    y = "Leaf Area Index",#
+    colour = "Cylinders"#
+  )#
+#
+p <- p + stat_smooth(method = "lm", formula= y ~ ns(x,4))  #
+#
+p#
+#
+ #theme(axis.text.x = element_text(size = 14),#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+p<- p + labs(title = "Average LAI of the Santa Rita Mesquite Savannah from MODIS by DOY over 15 years") +#
+  theme_bw() + theme(axis.title = element_text(size = 18)) + theme(title = element_text(size = 20))#
+#
+p <- p + labs(#
+    x = "Day Of Year",#
+    y = "Leaf Area Index",#
+    colour = "Cylinders"#
+  )#
+#
+p <- p + stat_smooth(aes(group = 1), method = "lm", formula= y ~ ns(x,4))  #
+#
+p#
+#
+ #theme(axis.text.x = element_text(size = 14),#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+p<- p + labs(title = "Average LAI of the Santa Rita Mesquite Savannah from MODIS by DOY over 15 years") +#
+  theme_bw() + theme(axis.title = element_text(size = 18)) + theme(title = element_text(size = 20))#
+#
+p <- p + labs(#
+    x = "Day Of Year",#
+    y = "Leaf Area Index",#
+    colour = "Cylinders"#
+  )#
+#
+p <- p + stat_smooth(aes(group = 1), method = "lm", formula= y ~ poly(x,4))  #
+#
+p#
+#
+ #theme(axis.text.x = element_text(size = 14),#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+p<- p + labs(title = "Average LAI of the Santa Rita Mesquite Savannah from MODIS by DOY over 15 years") +#
+  theme_bw() + theme(axis.title = element_text(size = 18)) + theme(title = element_text(size = 20))#
+#
+p <- p + labs(#
+    x = "Day Of Year",#
+    y = "Leaf Area Index",#
+    colour = "Cylinders"#
+  )#
+#
+p <- p + stat_smooth(aes(group = 1), method = "lm", formula= y ~ poly(x,5))  #
+#
+p#
+#
+ #theme(axis.text.x = element_text(size = 14),#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+p<- p + labs(title = "Average LAI of the Santa Rita Mesquite Savannah from MODIS by DOY over 15 years") +#
+  theme_bw() + theme(axis.title = element_text(size = 18)) + theme(title = element_text(size = 20))#
+#
+p <- p + labs(#
+    x = "Day Of Year",#
+    y = "Leaf Area Index",#
+    colour = "Cylinders"#
+  )#
+#
+p <- p + stat_smooth(aes(group = 1), method = "lm", formula= y ~ poly(x,6))  #
+#
+p#
+#
+ #theme(axis.text.x = element_text(size = 14),#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+p<- p + labs(title = "Average LAI of the Santa Rita Mesquite Savannah from MODIS by DOY over 15 years") +#
+  theme_bw() + theme(axis.title = element_text(size = 18)) + theme(title = element_text(size = 20))#
+#
+p <- p + labs(#
+    x = "Day Of Year",#
+    y = "Leaf Area Index",#
+    colour = "Cylinders"#
+  )#
+#
+p <- p + stat_smooth(aes(group = 1), method = "lm", formula= y ~ poly(x,3))  #
+#
+p#
+#
+ #theme(axis.text.x = element_text(size = 14),#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+p<- p + labs(title = "Average LAI of the Santa Rita Mesquite Savannah from MODIS by DOY over 15 years") +#
+  theme_bw() + theme(axis.title = element_text(size = 18)) + theme(title = element_text(size = 20))#
+#
+p <- p + labs(#
+    x = "Day Of Year",#
+    y = "Leaf Area Index",#
+    colour = "Cylinders"#
+  )#
+#
+p <- p + stat_smooth(aes(group = 1), method = "lm", formula= y ~ poly(x,4))  #
+#
+p#
+#
+ #theme(axis.text.x = element_text(size = 14),#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+p<- p + labs(title = "Average LAI of the Santa Rita Mesquite Savannah from MODIS by DOY over 15 years") +#
+  theme_bw() + theme(axis.title = element_text(size = 18)) + theme(title = element_text(size = 20))#
+#
+p <- p + labs(#
+    x = "Day Of Year",#
+    y = "Leaf Area Index",#
+    colour = "Cylinders"#
+  )#
+#
+p <- p + stat_smooth(aes(group = 1))  #
+#
+p#
+#
+ #theme(axis.text.x = element_text(size = 14),#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+p<- p + labs(title = "Average LAI of the Santa Rita Mesquite Savannah from MODIS by DOY over 15 years") +#
+  theme_bw() + theme(axis.title = element_text(size = 18)) + theme(title = element_text(size = 20))#
+#
+p <- p + labs(#
+    x = "Day Of Year",#
+    y = "Leaf Area Index",#
+    colour = "Cylinders"#
+  )#
+#
+p <- p + stat_smooth(aes(group = 1), method = "lm", formula= y ~ poly(x,4))  #
+#
+p#
+#
+ #theme(axis.text.x = element_text(size = 14),#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+statistics_LST_Day <- read.csv(file="/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/COURSES/Fall 15/Remote Sensing of the Environment REM 590/Assignments/Assignment 5 - Time Series/Data/SRM AZ statistics_Lai_1km.asc")#
+#
+dates <- as.Date(statistics_LST_Day$date)#
+years <- format(dates, format = "%Y")#
+months <- format(dates, format = "%m")#
+DOY <- format(dates, format = "%j")#
+#DOY <- yday (statistics_LST_Day$date)#
+statistics_LST_Day$DOY <- DOY#
+p <- ggplot(aes(statistics_LST_Day$DOY,statistics_LST_Day$mean, ylim(0,3.2)), data=statistics_LST_Day) #
+p <- p + geom_point(alpha=2/10, shape=21, fill="blue", colour="black", size=5)#
+#
+p<- p + labs(title = "Average LAI of the Santa Rita Mesquite Savannah from MODIS by DOY over 15 years") +#
+  theme_bw() + theme(axis.title = element_text(size = 18)) + theme(title = element_text(size = 20))#
+#
+p <- p + labs(#
+    x = "Day Of Year",#
+    y = "Leaf Area Index",#
+    colour = "Cylinders"#
+  )#
+#
+p <- p + stat_smooth(aes(group = 1), method = "loess") #
+#
+p#
+#
+ #theme(axis.text.x = element_text(size = 14),#
+#
+#qplot(statistics_LST_Day$DOY,statistics_LST_Day$mean,main="Average LAI by DOY over the Santa Rita Mesquite Savannah South of Tucson, AZ", xlab="DOY", ylab="LAI", ylim(0,3.2), data=statistics_LST_Day,)  + geom_point() + geom_smooth(aes(group = 1))#
+#
+#CAPTION: from 9 pixels subsetted by Month of#
+#0 rows removed by R due to missing values
+#BAR GRAPH OBJECT OF PRECIPITATION DATA#
+#	Authored by Sean Hendryx#
+#	While working at The Univerity of Arizona#
+#	2015#
+################################################################################################################
+#
+#IMPORT LIBRARIES#
+library(ggplot2)#
+#library(plyr)#
+#library(reshape2)#
+#
+# SET WORKING DIRECTORY#
+setwd("/Users/seanhendryx/THE UNIVERSITY OF ARIZONA (UA)/DATA/Sap Flow Data/COMPILED DATA/Corrected Outer Readings/Compiled on 20150922")#
+#
+#READ DATA INTO R#
+raindf <- read.csv("RainData.csv", header=TRUE, sep = ",")#
+#
+#MAKE BARPLOT OBJECT#
+#
+#barplot attempt#
+#mp <- barplot(raindf$rain, ylim=c(0,53))#
+#mp#
+#
+#qplot#
+#rainbars <- qplot(DOY, Rain, color="blue", data=raindf, geom="histogram", stat="identity")#
+#
+ggplot(data=raindf, aes(x=DOY, y=Rain, fill=Rain)) + geom_bar(stat="identity")
+setwd("/Users/seanhendryx/THE UNIVERSITY OF ARIZONA (UA)/DATA/Sap Flow Data/COMPILED DATA/Corrected Outer Readings/Compiled on 20150922")
+#BAR GRAPH OBJECT OF PRECIPITATION DATA#
+#	Authored by Sean Hendryx#
+#	While working at The Univerity of Arizona#
+#	2015#
+################################################################################################################
+#
+#IMPORT LIBRARIES#
+library(ggplot2)#
+#library(plyr)#
+#library(reshape2)#
+#
+# SET WORKING DIRECTORY#
+setwd("/Users/seanhendryx/THE UNIVERSITY OF ARIZONA (UA)/DATA/Sap Flow Data/COMPILED DATA/Corrected Outer Readings/Compiled on 20150922")#
+#
+#READ DATA INTO R#
+raindf <- read.csv("RainData.csv", header=TRUE, sep = ",")#
+#
+#MAKE BARPLOT OBJECT#
+#
+#barplot attempt#
+#mp <- barplot(raindf$rain, ylim=c(0,53))#
+#mp#
+#
+#qplot#
+#rainbars <- qplot(DOY, Rain, color="blue", data=raindf, geom="histogram", stat="identity")#
+#
+ggplot(data=raindf, aes(x=DOY, y=Rain, fill=Rain)) + geom_bar(stat="identity")
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+var <- read.table(file = "/Users/seanhendryx/Desktop/tiger.txt", header = FALSE)#
+hist(var, breaks = 20, freq = FALSE)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+var <- read.table(file = "/Users/seanhendryx/Desktop/reshapedTiger.txt", header = FALSE)#
+hist(var, breaks = 20, freq = FALSE)
+var
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+var <- read.table(file = "/Users/seanhendryx/Desktop/reshapedTiger.txt", header = FALSE)#
+hist(var, breaks = 20, freq = FALSE)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+var <- read.table(file = "/Users/seanhendryx/Desktop/reshapedTiger.txt", header = FALSE)#
+varVector = scan(var) #
+hist(varVector, breaks = 20, freq = FALSE)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+var <- read.table(file = "/Users/seanhendryx/Desktop/reshapedTiger.txt", header = FALSE)#
+varVector <- scan(var) #
+hist(varVector, breaks = 20, freq = FALSE)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+var <- scan(file = "/Users/seanhendryx/Desktop/reshapedTiger.txt")#
+hist(var, breaks = 20, freq = FALSE)
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+var <- scan(file = "/Users/seanhendryx/Desktop/reshapedTiger.txt")#
+#hist(var, breaks = 20, freq = FALSE)#
+#
+ggplot(var, aes(x=var)) +#
+  geom_histogram(aes(y=..count../sum(..count..)), bins=20) +#
+  theme_bw()
+ls()
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+var <- read.table(file = "/Users/seanhendryx/Desktop/reshapedTiger.txt")#
+#hist(var, breaks = 20, freq = FALSE)#
+#
+ggplot(var, aes(x=var)) +#
+  geom_histogram(aes(y=..count../sum(..count..)), bins=20) +#
+  theme_bw()
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+var <- read.table(file = "/Users/seanhendryx/Desktop/reshapedTiger.txt")#
+#hist(var, breaks = 20, freq = FALSE)#
+#
+ggplot(data = var, aes(x=var)) +#
+  geom_histogram(aes(y=..count../sum(..count..)), bins=20) +#
+  theme_bw()
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+var <- read.table(file = "/Users/seanhendryx/Desktop/reshapedTiger.txt")#
+#hist(var, breaks = 20, freq = FALSE)#
+#
+ggplot(data = var, aes(x=var)) +#
+  geom_histogram(bins=20) +#
+  theme_bw()
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+var <- scan(file = "/Users/seanhendryx/Desktop/reshapedTiger.txt")#
+#hist(var, breaks = 20, freq = FALSE)#
+#
+ggplot(data = var, aes(x=var)) +#
+  geom_histogram(bins=20) +#
+  theme_bw()
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+var <- read.txt(file = "/Users/seanhendryx/Desktop/reshapedTiger.txt", header=TRUE)#
+#hist(var, breaks = 20, freq = FALSE)#
+#
+ggplot(data = var, aes(x=value)) +#
+  geom_histogram(aes(y=..density..), bins=20) +#
+  theme_bw()
+var
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+tiger <- read.txt(file = "/Users/seanhendryx/Desktop/reshapedTiger.txt", header=TRUE)#
+#hist(tiger, breaks = 20, freq = FALSE)#
+#
+ggplot(data = tiger, aes(x=value)) +#
+  geom_histogram(aes(y=..density..), bins=20) +#
+  theme_bw()
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+tiger <- read.table(file = "/Users/seanhendryx/Desktop/reshapedTiger.txt", header=TRUE)#
+#hist(tiger, breaks = 20, freq = FALSE)#
+#
+ggplot(data = tiger, aes(x=value)) +#
+  geom_histogram(aes(y=..density..), bins=20) +#
+  theme_bw()
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+tiger <- read.table(file = "/Users/seanhendryx/Desktop/reshapedTiger.txt", header=TRUE)#
+#hist(tiger, breaks = 20, freq = FALSE)#
+#
+ggplot(data = tiger, aes(x=value)) +#
+  geom_histogram(aes(y=..ndensity..), bins=20) +#
+  theme_bw()
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+tiger <- read.table(file = "/Users/seanhendryx/Desktop/reshapedTiger.txt", header=TRUE)#
+#hist(tiger, breaks = 20, freq = FALSE)#
+#
+ggplot(data = tiger, aes(x=value)) +#
+  geom_bar(aes(y = (..count..)/sum(..count..)))+#
+  #geom_histogram(aes(y=..ndensity..), bins=20) +#
+  theme_bw()
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+tiger <- read.table(file = "/Users/seanhendryx/Desktop/reshapedTiger.txt", header=TRUE)#
+#hist(tiger, breaks = 20, freq = FALSE)#
+#
+ggplot(data = tiger, aes(x=value)) +#
+  geom_bar(aes(y = (..count..)/sum(..count..)), bins=20)+#
+  #geom_histogram(aes(y=..ndensity..), bins=20) +#
+  theme_bw()
+require(graphics)#
+library(lattice)#
+require(lubridate)#
+require(ggplot2)#
+#
+tiger <- read.table(file = "/Users/seanhendryx/Desktop/reshapedTiger.txt", header=TRUE)#
+#hist(tiger, breaks = 20, freq = FALSE)#
+#
+ggplot(data = tiger, aes(x=value)) +#
+  geom_bar(aes(y = (..count..)/sum(..count..)), stat=bin)+#
+  #geom_histogram(aes(y=..ndensity..), bins=20) +#
+  theme_bw()
+install.packages("gRbase")
+install.packages("Rgraphviz")
+library(gRbase)g1 <- ug(~a:b:e + a:c:e + b:d:e + c:d:e + c:g + d:f)
+library(gRbase)
+install.packages('landsat')
+install.packages('Rcurl')
+yes
+install.packages('RCurl')
+library(RCurl)#
+# create weighted edges#
+# graph must be acyclic#
+# The number must start with 0#
+s = c(0, 0, 1, 1, 1, 2, 2)#
+target = c(1, 2, 2, 3, 4, 5, 6)#
+value = c(5, 8, 10, 20, 30, 40, 50)#
+mylink = data.frame(s, target, value)#
+# create node names#
+name = c('begin', 'A', 'B', 'C', 'D', 'E', 'F')#
+mynode = data.frame(name)#
+# plot the Sankey diagram#
+sankeyNetwork(Links = mylink, Nodes = mynode,#
+              Source = "s", Target = "target",#
+              Value = "value", NodeID = "name",#
+              width = 700, fontSize = 12, nodeWidth = 30)
+install.packages("rLidar")
+yes
+install.packages("rLiDAR")
+long2UTM <- function(long) {#
+    (floor((long + 180)/6) %% 60) + 1#
+}
+SRERlong <- 110.85
+SRERZone <- long2UTM(SRERlong)
+SRERZone
+long2UTM(-110.85)
+library("rgdal")
+help(showEPSG)
+showEPSG("+proj=utm +zone=12")
+x1 <- rnorm(1000,5,7)
+hist(x1, col='grey')
+trueError <- rnorm(1000, 0, 2)#
+trueBeta0 <- 1.1
+trueBeta1 <- -8.2#
+#
+y <- trueBeta0 + trueBeta1*x1 + trueError
+hist(y)
+plot(x1, y, pch=20, col="red")
+model <- lm(y ~ x1)
+model
+coefs <- coef(model)#
+abline(coefs[1], coefs[2])
+library(ggplot2)
+df <- merge(x1,y)
+df
+nrows(x1)
+numrows(x1)
+Numrows(x0)
+NUMrows(x10
+NUMrows(x1)
+numRows(x1)
+nrow(x1)
+len(x1)
+length(x1)
+rbind(x1, y)
+df <- rbind(x1, y)
+df
+colnames(df)
+df <- cbind(x1, y)
+df
+p <- ggplot(df)
+df <- as.data.frame
+df
+df <- as.data.frame(cbind(x1,y))
+df
+p <- ggplot(df)
+p
+p <- p +geomscatter()
+p <- P + geom_scatter()
+p <- p + geom_scatter()
+p <- p +geom_point()
+p
+p <- ggplot(df) + geom_point(aes(x1, y))
+p
+p <- p + geom_line();p
+p <- p + geom_line()
+p
+p <- p + stat_smooth()
+p
+p <- ggplot(df) + geom_point(aes(x1, y)) + stat_smooth(aes(group = 1), method = "lm")
+p
+p <- ggplot(df) + geom_point(aes(x1, y)) + stat_smooth(aes(group = 1), method = "loess")
+p
+p <- ggplot(df) + geom_point(aes(x1, y)) + geom_smooth(model = lm) + theme_bw()
+p <- ggplot(df) + geom_point(aes(x1, y)) + geom_smooth(method = lm) + theme_bw()
+p
+lm
+model
+p <- p + geom_smooth()
+p
+p <- p + geom_smooth(data = df)
+p
+p <- p + geom_quantile()
+p
+yhat <- coefs[1]+ coefs[2]*x1
+cbind(df, yhat)
+p
+p <- ggplot(df) + geom_point(aes(x1, y)) + geom_smooth(method = lm) + theme_bw()
+p
+p <- geom_line(aes(x= x1, y = yhat))
+p
+p <- ggplot(df) + geom_point(aes(x1, y)) + geom_smooth(method = lm) + theme_bw()
+p <- p + geom_line(aes(x= x1, y = yhat))
+p
+p <- p + geom_line( aes(x =x1, y = yhat, col="blue"))
+p
+p <- p + geom_line( aes(x =x1, y = yhat), col="blue")
+p
+p <- p + scale_fill_manual(labels = c('yhat'))
+p
+p<- p + stat_smooth(aes(x = x1, y = y))
+p
+p <- p -  geom_line( aes(x =x1, y = yhat), col="blue")
+moreTrueError <- rnorm(1000, 0, 10)
+yMoreError <- <- trueBeta0 + trueBeta1*x1 + moreTrueError
+yMoreError <- trueBeta0 + trueBeta1*x1 + moreTrueError
+df2<- cbind(x1,yMoreError)
+p2 <- ggplot(df2) + geom_point(aes(x1, yMoreError)) + theme_bw()
+df2 <- as.data.frame(df2)
+p2 <- ggplot(df2) + geom_point(aes(x1, yMoreError)) + theme_bw()
+p2
+model2 <- lm(yMoreError ~ x1)
+summary(model2)
+z <- x1^2
+logy <- log(y)
+plot(x1, logy)
+logModel <- lm(logy ~ x1)
+summary(logModel)
+summary(model)
+p
+coef(logModel)
+plot(x1, logy)
+abline(coefs[1], coefs[2])
+plog<-ggplot(aes( x= x1, y = logy))
+library(rgdal)#
+#
+proj4string<-CRS("+proj=utm +zone=12 +datum=NAD83")#
+#
+EPSG<-showEPSG(proj4string)#
+#
+EPSG
+proj4string<-CRS("+proj=utm +zone=12")
+EPSG<-showEPSG(proj4string)
+showEPSG(proj4string)
+?SpatialPoints()
+proj4string<-CRS("+proj=utm +zone=12 +ellps=WGS84 +datum=WGS84 +units=m +no_defs")#
+#
+EPSG<-showEPSG(proj4string)#
+#
+EPSG
+update(rgdal)
+#	TIME-SERIES REGRESSIONS AND FORECASTING: MEAN DAILY SAPFLOW DATA#
+#	Authored by Sean Hendryx#
+#	While working at The Univerity of Arizona#
+#	2016#
+##########################################################################################################
+#
+#Load packages:#
+packages = c('ggplot2', 'data.table', 'dplyr', 'tools', 'plotly')#
+lapply(packages, library, character.only = TRUE)#
+#
+#Set working directory:#
+setwd("/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/RESEARCH ASSISTANTSHIP/HR PROJECT HYDRAULIC REDISTRIBUTION UA NSF/Correcting Sap Flux Measurements/Deterministic Sap Velocity Corrections/outputDirectory")#
+#Read in data:#
+df <- read.csv("SapVelocityCorrectedForProbeMisalignmentAndWounding.csv")#
+head(df)#
+#
+#Make list of ids:#
+idList <- unique(df$id)#
+#Extract strings with levels:#
+idList <- levels(idList)#
+#idList should be a list of character strings#
+#
+#Make DateTime Object#
+df$DateTime <- as.POSIXct(df$DateTime)#
+df$Date <- as.Date(df$Date)#
+#Convert dataframe to datatable:#
+DT <- data.table(df)#
+#
+#Make datatable of daily means in cm/day:#
+dailyDT <- DT[, .(VsInCmPerDay, Date), by = .(id, DOY)]#
+#
+#Compute daily mean for each individual meter and add to new column, meanDailySapVelocity:#
+dailyDT[, meanDailySapVelocity := mean(na.omit(VsInCmPerDay)), by = .(id, Date)]#
+dailyDT #
+#
+#Trim excess rows since now we only care about the daily mean of each sensor#
+setkey(dailyDT, Date, id)#
+dailyDT <- unique(dailyDT)#
+#
+#Add column signifying if sensor is on tap or lat:#
+#Note that these variable are hard coded, could be extracted from id by parsing id string#
+latList <- c("C2lat1", "C3lat1", "C3lat2")#
+dailyDT[,tapVsLat := ifelse(id %in% latList, "lat", "tap")]#
+#
+#Compute daily mean for taps and lats and add to new column, tapLatMeanDailySapVelocity:#
+dailyDT[, tapLatMeanDailySapVelocity := mean(na.omit(meanDailySapVelocity)), by = .(tapVsLat, Date)]#
+dailyDT[1:7]#
+#
+#Compute standard error:#
+stndError <- function(x){#
+	sd(x)/sqrt(length(x))#
+}#
+dailyDT[, SEMeanVs := stndError(na.omit(meanDailySapVelocity)), by = .(tapVsLat, Date)]#
+#
+#Set key of datatable to retrieve one daily mean and one standard error of the mean for each day and each tapvslat#
+setkey(dailyDT, Date, tapVsLat)#
+#
+graphDT <- unique(dailyDT)#
+#
+#Now remove the columns that don't apply:#
+graphDT[,c("id","VsInCmPerDay","meanDailySapVelocity") := NULL]#
+#
+tapDT <- graphDT[tapVsLat =="tap"]#
+latDT <- graphDT[tapVsLat =="lat"]#
+alpha <- .4#
+ggp <- ggplot(data = graphDT, aes(x=Date, y = tapLatMeanDailySapVelocity)) + geom_ribbon(data = tapDT, aes(x = as.Date(Date), ymin=tapLatMeanDailySapVelocity - SEMeanVs, ymax=tapLatMeanDailySapVelocity + SEMeanVs), alpha=alpha) + geom_line(data = tapDT, aes(x = as.Date(Date),y = tapLatMeanDailySapVelocity), colour = "blue")#
+ggp <- ggp + geom_ribbon(data = latDT, aes(x = as.Date(Date), ymin=tapLatMeanDailySapVelocity - SEMeanVs, ymax=tapLatMeanDailySapVelocity + SEMeanVs), alpha=0.4) + geom_line(data = latDT, aes(x = as.Date(Date),y = tapLatMeanDailySapVelocity), colour = "red") + theme_bw()#
+ggp <- ggp + labs(y = "Sap Flow Velocity (cm/day)")#
+ggp
+dailyDT
+tapDT
+dailyDT[, SEMeanVs := stndError(na.omit(tapLatMeanDailySapVelocity)), by = .(tapVsLat, Date)]
+#Set key of datatable to retrieve one daily mean and one standard error of the mean for each day and each tapvslat#
+setkey(dailyDT, Date, tapVsLat)#
+#
+graphDT <- unique(dailyDT)#
+#
+#Now remove the columns that don't apply:#
+graphDT[,c("id","VsInCmPerDay","meanDailySapVelocity") := NULL]#
+#
+tapDT <- graphDT[tapVsLat =="tap"]#
+latDT <- graphDT[tapVsLat =="lat"]#
+alpha <- .4#
+ggp <- ggplot(data = graphDT, aes(x=Date, y = tapLatMeanDailySapVelocity)) + geom_ribbon(data = tapDT, aes(x = as.Date(Date), ymin=tapLatMeanDailySapVelocity - SEMeanVs, ymax=tapLatMeanDailySapVelocity + SEMeanVs), alpha=alpha) + geom_line(data = tapDT, aes(x = as.Date(Date),y = tapLatMeanDailySapVelocity), colour = "blue")#
+ggp <- ggp + geom_ribbon(data = latDT, aes(x = as.Date(Date), ymin=tapLatMeanDailySapVelocity - SEMeanVs, ymax=tapLatMeanDailySapVelocity + SEMeanVs), alpha=0.4) + geom_line(data = latDT, aes(x = as.Date(Date),y = tapLatMeanDailySapVelocity), colour = "red") + theme_bw()#
+ggp <- ggp + labs(y = "Sap Flow Velocity (cm/day)")#
+ggp
+dailyDT[, SEMeanVs := stndError(na.omit(meanDailySapVelocity)), by = .(tapVsLat, Date)]#
+#
+#Set key of datatable to retrieve one daily mean and one standard error of the mean for each day and each tapvslat#
+setkey(dailyDT, Date, tapVsLat)#
+#
+graphDT <- unique(dailyDT)#
+#
+#Now remove the columns that don't apply:#
+graphDT[,c("id","VsInCmPerDay","meanDailySapVelocity") := NULL]#
+#
+tapDT <- graphDT[tapVsLat =="tap"]#
+latDT <- graphDT[tapVsLat =="lat"]#
+alpha <- .4#
+ggp <- ggplot(data = graphDT, aes(x=Date, y = tapLatMeanDailySapVelocity)) + geom_ribbon(data = tapDT, aes(x = as.Date(Date), ymin=tapLatMeanDailySapVelocity - SEMeanVs, ymax=tapLatMeanDailySapVelocity + SEMeanVs), alpha=alpha) + geom_line(data = tapDT, aes(x = as.Date(Date),y = tapLatMeanDailySapVelocity), colour = "blue")#
+ggp <- ggp + geom_ribbon(data = latDT, aes(x = as.Date(Date), ymin=tapLatMeanDailySapVelocity - SEMeanVs, ymax=tapLatMeanDailySapVelocity + SEMeanVs), alpha=0.4) + geom_line(data = latDT, aes(x = as.Date(Date),y = tapLatMeanDailySapVelocity), colour = "red") + theme_bw()#
+ggp <- ggp + labs(y = "Sap Flow Velocity (cm/day)")#
+ggp
+setwd("/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/RESEARCH ASSISTANTSHIP/HR PROJECT HYDRAULIC REDISTRIBUTION UA NSF/HR Regressions & Forecasting/input")#
+#Read in data:#
+envdf <- read.csv("environment.csv", header=TRUE, skip = 2, sep = ",")#
+head(envdf)#
+#Combine env and HD root data into single DT for regression & forecasting#
+#Subset to same dates:#
+envdf <-envdf[graphDT[1,DOY]:dim(envdf)[1],]#
+head(envdf)#
+envDT = as.data.table(envdf)#
+envDT#
+#
+#Set key for merge:#
+setkey(envDT, Date)#
+setkey(tapDT, Date)#
+#
+#Merge by Date primary key full outer join:#
+regressDT <- merge(envDT, tapDT)#
+#
+regressDT#
+#
+#how well is tap explained by shallowMinusDeepSoil#
+model <- lm( regressDT[,tapLatMeanDailySapVelocity] ~ regressDT[,shallowMinusDeepSoilMoisture])
+setwd("/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/RESEARCH ASSISTANTSHIP/HR PROJECT HYDRAULIC REDISTRIBUTION UA NSF/HR Regressions & Forecasting/input")#
+#Read in data:#
+envdf <- read.csv("environment.csv", header=TRUE, skip = 2, sep = ",")#
+head(envdf)#
+#Combine env and HD root data into single DT for regression & forecasting#
+#Subset to same dates:#
+envdf <-envdf[graphDT[1,DOY]:dim(envdf)[1],]#
+head(envdf)#
+envDT = as.data.table(envdf)#
+envDT#
+#
+#Set key for merge:#
+setkey(envDT, Date)#
+setkey(tapDT, Date)#
+#
+#Merge by Date primary key full outer join:#
+regressDT <- merge(envDT, tapDT)#
+#
+regressDT#
+#
+#how well is tap explained by shallowMinusDeepSoil#
+model <- lm( regressDT[,tapLatMeanDailySapVelocity] ~ regressDT[,shallowMinusDeepSoilMoisture])
+dim(envDT)
+envDT
+tapDT
+dim(tapDT)
+envdf <-envdf[tapDT[1,DOY]:dim(tapDT)[1],]
+dim(envdf)
+tapDT
+envdf <-envdf[graphDT[1,DOY]:dim(envdf)[1],]
+dim(envdf)
+graphDT
+envDT
+dim(envDT)
+dim(tapDT)
+envDT
+envDT[,Date := tapDT[,Date]]
+envDT
+#Set key for merge:#
+setkey(envDT, Date)#
+setkey(tapDT, Date)#
+#
+#Merge by Date primary key full outer join:#
+regressDT <- merge(envDT, tapDT)#
+#
+regressDT#
+#
+#how well is tap explained by shallowMinusDeepSoil#
+model <- lm( regressDT[,tapLatMeanDailySapVelocity] ~ regressDT[,shallowMinusDeepSoilMoisture])
+model <- lm( regressDT[,tapLatMeanDailySapVelocity] ~ regressDT[,shallowMinusDeep])
+summary(model)
+plot(regressDT[,shallowMinusDeep], regressDT[,tapLatMeanDailySapVelocity])
+model <- lm( -regressDT[,tapLatMeanDailySapVelocity] ~ regressDT[,shallowMinusDeep])
+summary(model)
+plot(regressDT[,shallowMinusDeep], -regressDT[,tapLatMeanDailySapVelocity])
