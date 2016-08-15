@@ -8,4 +8,7 @@ PROJECT IN DEVELOPMENT
 
 ![errorConvergence](outputDirectory/Error Convergence.png "Error convergence from randomForest:")
 
-![dotchart](outputDirectory/Dotchart of variable importance in predicting HR as measured by a Random Forest.png "Variable Importance from randomForest:")
+![dotchart](outputDirectory/Dotchart of variable importance in predicting HR as measured by a Random Forest.png "Variable Importance from randomForest")
+
+Some interesting indications of both autocorellation and multimodality:
+![Tap Velocity Over Delta Soil Moisture Colorized and Pathed by Date.png](outputDirectory/Tap Velocity Over Delta Soil Moisture Colorized and Pathed by Date.png "Tap Velocity Over Delta Soil Moisture Colorized and Pathed by Date.png")
