@@ -111,11 +111,16 @@ regressDT
 #how well is tap explained by shallowMinusDeepSoil
 model <- lm(regressDT[,tapLatMeanDailySapVelocity] ~ regressDT[,shallowMinusDeep])
 
-plot(regressDT[,shallowMinusDeep], -regressDT[,tapLatMeanDailySapVelocity])
+plot(regressDT[,shallowMinusDeep], regressDT[,tapLatMeanDailySapVelocity])
+
+
+
+
+
 
 model1 <- lm(regressDT[,tapLatMeanDailySapVelocity] ~ regressDT[,maxAirTemp])
 
-plot(regressDT[,maxAirTemp], -regressDT[,tapLatMeanDailySapVelocity])
+plot(regressDT[,maxAirTemp], regressDT[,tapLatMeanDailySapVelocity])
 
 mmodel <- lm(regressDT[,tapLatMeanDailySapVelocity] ~ regressDT[,maxAirTemp] + regressDT[,minAirTemp] + regressDT[,shallowMinusDeep]+ regressDT[,precip..mm.])
 
@@ -124,7 +129,25 @@ newDT <- regressDT[,.(Date, Year, DOY.x, precip..mm., shallowMinusDeep, maxAirTe
 
 #Change that annoyingly long "y" column name:
 names(newDT)[names(newDT)=="tapLatMeanDailySapVelocity"] = "meanTapRootSapVelocity"
-write.csv(newDT, "Sap Velocity Data for Predicting HR.csv")
+#Let's try colorizing by temp:
+ggp2 <- ggplot(data = newDT, aes(x= shallowMinusDeep, y = meanTapRootSapVelocity, colour = minAirTemp)) + geom_point() + scale_colour_gradient2(low="blue", high="red") + theme_bw() + labs(y = "Sap Flow Velocity (cm/day)", x = "Delta Soil Moisture (Shallow Minus Deep)")
+ggp2
+ggp2 <- ggplot(data = newDT, aes(x= shallowMinusDeep, y = meanTapRootSapVelocity, colour = maxAirTemp)) + geom_point() + scale_colour_gradient2(low="blue", high="red") + geom_path() + theme_bw() + labs(y = "Sap Flow Velocity (cm/day)", x = "Delta Soil Moisture (Shallow Minus Deep)")
+ggp2
+
+myBreaks <- function(x){
+    breaks <- c(min(x),median(x),max(x))
+    attr(breaks,"labels") <- as.Date(breaks, origin="1970-01-01")
+    names(breaks) <- attr(breaks,"labels")
+    return(breaks)
+}
+ggp2 <- ggplot(data = newDT, aes(x= shallowMinusDeep, y = meanTapRootSapVelocity, colour = as.integer(Date))) + geom_point() + scale_colour_gradient(low="green", high="blue", breaks=myBreaks) + geom_path() + theme_bw() + labs(y = "Sap Flow Velocity (cm/day)", x = "Delta Soil Moisture (Shallow Minus Deep)")
+ggp2
+
+ggp2 <- ggplot(data = newDT, aes(x= shallowMinusDeep, y = meanTapRootSapVelocity, colour = log(precip..mm.))) + geom_point() + scale_colour_gradient(low = "red", high="blue") + geom_path() + theme_bw() + labs(y = "Sap Flow Velocity (cm/day)", x = "Delta Soil Moisture (Shallow Minus Deep)")
+ggp2
+
+#write.csv(newDT, "Sap Velocity Data for Predicting HR.csv")
 
 
 
