@@ -4,7 +4,7 @@ PROJECT IN DEVELOPMENT
 
 ![smallMultiples](outputDirectory/Scatter Plot Matrix.png "Scatter Plot Matrix")
 
-![VsOverDelta](outputDirectory/Tap Velocity Over Delta Soil Moisture.png "Taproot sap velocity over soil moisture delta (shallow minus deep)")
+![Tap Velocity Over Delta Soil Moisture.png](outputDirectory/Tap Velocity Over Delta Soil Moisture.png "Taproot sap velocity over soil moisture delta (shallow minus deep)")
 
 ![errorConvergence](outputDirectory/Error Convergence.png "Error convergence from randomForest:")
 
