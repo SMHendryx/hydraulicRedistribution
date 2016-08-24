@@ -108,7 +108,8 @@ regressDT <- merge(envDT, tapDT)
 regressDT
 
 
-#how well is tap explained by shallowMinusDeepSoil
+#how well is tap explained by shallowMinusDeepSoil?
+# My hypothesis is that this is the best predictor (which is what was found by randomForest)
 model <- lm(regressDT[,tapLatMeanDailySapVelocity] ~ regressDT[,shallowMinusDeep])
 
 plot(regressDT[,shallowMinusDeep], regressDT[,tapLatMeanDailySapVelocity])
@@ -127,8 +128,10 @@ mmodel <- lm(regressDT[,tapLatMeanDailySapVelocity] ~ regressDT[,maxAirTemp] + r
 newDT <- regressDT[,.(Date, Year, DOY.x, precip..mm., shallowMinusDeep, maxAirTemp, minAirTemp, tapLatMeanDailySapVelocity)]
 
 
-#Change that annoyingly long "y" column name:
+#Change column name of y variable:
 names(newDT)[names(newDT)=="tapLatMeanDailySapVelocity"] = "meanTapRootSapVelocity"
+#Recreate same model created above (by regressing sap velocity over delta soil moisture) but with new column names:
+model <- lm(newDT[,meanTapRootSapVelocity] ~ newDT[,shallowMinusDeep])
 #Let's try colorizing by temp:
 ggp2 <- ggplot(data = newDT, aes(x= shallowMinusDeep, y = meanTapRootSapVelocity, colour = minAirTemp)) + geom_point() + scale_colour_gradient2(low="blue", high="red") + theme_bw() + labs(y = "Sap Flow Velocity (cm/day)", x = "Delta Soil Moisture (Shallow Minus Deep)")
 ggp2
@@ -141,7 +144,7 @@ myBreaks <- function(x){
     names(breaks) <- attr(breaks,"labels")
     return(breaks)
 }
-ggp2 <- ggplot(data = newDT, aes(x= shallowMinusDeep, y = meanTapRootSapVelocity, colour = as.integer(Date))) + geom_point() + scale_colour_gradient(low="green", high="blue", breaks=myBreaks) + geom_path() + theme_bw() + labs(y = "Sap Flow Velocity (cm/day)", x = "Delta Soil Moisture (Shallow Minus Deep)")
+ggp2 <- ggplot(data = newDT, aes(x= shallowMinusDeep, y = meanTapRootSapVelocity, colour = as.integer(Date))) + geom_point() + scale_colour_gradient(low="green", high="blue", breaks=myBreaks) + geom_path() + theme_bw() + labs(y = "Sap Flow Velocity (cm/day)", x = "Delta Soil Moisture (Shallow Minus Deep)") + stat_smooth(method = lm)
 ggp2
 
 ggp2 <- ggplot(data = newDT, aes(x= shallowMinusDeep, y = meanTapRootSapVelocity, colour = log(precip..mm.))) + geom_point() + scale_colour_gradient(low = "red", high="blue") + geom_path() + theme_bw() + labs(y = "Sap Flow Velocity (cm/day)", x = "Delta Soil Moisture (Shallow Minus Deep)")
@@ -159,19 +162,13 @@ plotDT[, c("Date", "Year", "DOY.x") := NULL]
 
 plot(plotDT)
 # No singular variable looks to be a good predictor and it looks like there are some nonlinear relationships
-#Since no linear model looks to be present, let's look at a randomForest predictor
+#Since no linear model looks to be present, let's look at a randomForest predictor (reference randomForest.R in project directory)
 #But clearly, there seems to autocorrelation.  So, time-series analysis should be more appropriate
+# What do the residuals tell us:
+fortify(model)
+plot(model, which = 1)
 
-#IID regressions:
-#lmodel <- lm(HD ~ shallowMinusDeep)
-#plot(shallowMinusDeep, HD)
 
-#Now multiple linear regression:
-#new DT for small multiple plots:
-#newDT = DT[,.(HD, precip, shallowMinusDeep, maxAirTemp, minAirTemp)]
-#newdf <- as.data.frame(newDT)
-#plot(newdf)
-#mlmodel <- lm(HD, ~ shallowMinusDeep + maxAirTemp + minAirTemp) # add precip? - probably not because precip and shallowMinusDeep are not independent 
 
 #We could also look at how mesquites draw upon stored water:??????
 # HL <- 

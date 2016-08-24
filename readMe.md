@@ -13,3 +13,9 @@ PROJECT IN DEVELOPMENT
 
 Some interesting indications of both autocorellation and multimodality:
 ![Tap Velocity Over Delta Soil Moisture Colorized and Pathed by Date.png](outputDirectory/Tap Velocity Over Delta Soil Moisture Colorized and Pathed by Date.png "Tap Velocity Over Delta Soil Moisture Colorized and Pathed by Date.png")
+
+Beginning work with ARIMA Forecasting:
+First make the data stationary:
+![Stationary Tap Velocity.png](outputDirectory/Stationary Tap Velocity.png)"Stationary Tap Velocity.png"
+And test forecast:
+![forecast from arima model.png](outputDirectory/forecast from arima model.png)"forecast from arima model.png"
