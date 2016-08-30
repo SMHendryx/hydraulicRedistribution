@@ -125,6 +125,11 @@ regressDT[2:length(regressDT$shallowMinusDeep), shallowMinusDeepDiff1 := diff(re
 tsggp <- ggplot(data = regressDT, aes(x=Date, y = shallowMinusDeepDiff1)) + geom_line() + theme_bw() + labs(y = "Diffed Delta Soil Moisture", title = "Stationary Delta Soil Moisture (Shallow Minus Deep)")
 tsggp
 
+#Make a "long" datatable and add rain distinction for Faceting:
+#But first, let's try with base graphics:
+plot (x=regressDT$Date, y = regressDT$shallowMinusDeepDiff1, type = "l")
+plot (x=regressDT$Date, y = regressDT$precip..mm., type = "l", col = "blue")
+
 
 #Plot cross correlation:
 #Ignoring first row since values are NA after diff()
