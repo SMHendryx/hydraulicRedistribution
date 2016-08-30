@@ -21,7 +21,7 @@ Autocorrelation, though statistically significant, does not appear to be strong 
 ![Autocorrelation](outputDirectory/Autocorrelation.png "Autocorrelation")
 
 Especially when compared to cross correlation:
-![Changes in the Delta Soil Moisture actually FOLLOW (lag) changes in Tap Velocity](outputDirectory/Changes in the Delta Soil Moisture actually FOLLOW (lag) changes in Tap Velocity.pdf "Changes in the Delta Soil Moisture actually FOLLOW (lag) changes in Tap Velocity")
+![Changes in the Delta Soil Moisture actually FOLLOW (lag) changes in Tap Velocity](outputDirectory/Changes in the Delta Soil Moisture actually FOLLOW (lag) changes in Tap Velocity.png "Changes in the Delta Soil Moisture actually FOLLOW (lag) changes in Tap Velocity")
 
 
 Exploratory work with ARIMA Forecasting (NEEDS TO BE UPDATED IN LIGHT OF NEW INFORMATION FROM CCF() AS SHOWN ABOVE):
