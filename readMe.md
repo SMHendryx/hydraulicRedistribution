@@ -18,7 +18,9 @@ Which we also clearly see in the residuals:
 ![Heteroskedastic Residuals of LM Tap Velocity Over Delta Soil Moisture.png](outputDirectory/Heteroskedastic Residuals of LM Tap Velocity Over Delta Soil Moisture.png "Heteroskedastic Residuals of LM Tap Velocity Over Delta Soil Moisture.png")
 
 Beginning work with ARIMA Forecasting:
-First make the data stationary:
+First make the data stationary, using diff() in R:
+(diff returns Value:
+If x is a vector of length n and differences = 1, then the computed result is equal to the successive differences x[(1+lag):n] - x[1:(n-lag)].)
 ![Stationary Tap Velocity.png](outputDirectory/Stationary Tap Velocity.png "Stationary Tap Velocity.png")
 And test forecast:
 ![forecast from arima model.png](outputDirectory/forecast from arima model.png "forecast from arima model.png")
