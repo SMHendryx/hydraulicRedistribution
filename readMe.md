@@ -12,10 +12,10 @@ PROJECT IN DEVELOPMENT
 ![dotchart](outputDirectory/Dotchart of variable importance in predicting HR as measured by a Random Forest.png "Variable Importance from randomForest")
 
 Some interesting indications of both autocorellation and multimodality:
-![Tap Velocity Over Delta Soil Moisture Colorized and Pathed by Date with LM](outputDirectory/Tap Velocity Over Delta Soil Moisture Colorized and Pathed by Date with LM.pdf "Tap Velocity Over Delta Soil Moisture Colorized and Pathed by Date")
+![Tap Velocity Over Delta Soil Moisture Colorized and Pathed by Date with LM](outputDirectory/Tap Velocity Over Delta Soil Moisture Colorized and Pathed by Date with LM "Tap Velocity Over Delta Soil Moisture Colorized and Pathed by Date")
 
 Which we also clearly see in the residuals:
-![Heteroskedastic Residuals of LM Tap Velocity Over Delta Soil Moisture](outputDirectory/Heteroskedastic Residuals of LM Tap Velocity Over Delta Soil Moisture "Heteroskedastic Residuals of LM Tap Velocity Over Delta Soil Moisture")
+![Heteroskedastic Residuals of LM Tap Velocity Over Delta Soil Moisture.png](outputDirectory/Heteroskedastic Residuals of LM Tap Velocity Over Delta Soil Moisture.png "Heteroskedastic Residuals of LM Tap Velocity Over Delta Soil Moisture.png")
 
 Stationary explanatory variable Delta Soil Moisture:
 ![Stationary Delta Soil Moisture](outputDirectory/Stationary Delta Soil Moisture.png "Stationary Delta Soil Moisture")
