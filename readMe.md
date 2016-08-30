@@ -29,7 +29,7 @@ Autocorrelation, though statistically significant, does not appear to be strong 
 Especially when compared to cross correlation:
 ![Changes in the Delta Soil Moisture actually FOLLOW (lag) changes in Tap Velocity](outputDirectory/Changes in the Delta Soil Moisture actually FOLLOW (lag) changes in Tap Velocity.png "Changes in the Delta Soil Moisture actually FOLLOW (lag) changes in Tap Velocity")
 
-The important and notable result here is that changes in the Delta Soil Moisture actually FOLLOW (lag) changes in Tap Velocity.  This suggests that changes in Tap Velocity are preceded my some other variable, such as Vapor Pressure Defecit, to be investigate later...
+The important and notable result here is that changes in the Delta Soil Moisture actually FOLLOW (lag) changes in Tap Velocity.  This suggests that changes in Tap Velocity are preceded by some other variable, such as Vapor Pressure Defecit, to be investigated further...
 
 
 Exploratory work with ARIMA Forecasting (NEEDS TO BE UPDATED IN LIGHT OF NEW INFORMATION FROM CCF() AS SHOWN ABOVE):
