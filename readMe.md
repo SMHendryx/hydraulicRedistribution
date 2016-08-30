@@ -12,13 +12,13 @@ PROJECT IN DEVELOPMENT
 ![dotchart](outputDirectory/Dotchart of variable importance in predicting HR as measured by a Random Forest.png "Variable Importance from randomForest")
 
 Some interesting indications of both autocorellation and multimodality:
-![Tap Velocity Over Delta Soil Moisture Colorized and Pathed by Date.png](outputDirectory/Tap Velocity Over Delta Soil Moisture Colorized and Pathed by Date.png "Tap Velocity Over Delta Soil Moisture Colorized and Pathed by Date.png")
+![Tap Velocity Over Delta Soil Moisture Colorized and Pathed by Date with LM](outputDirectory/Tap Velocity Over Delta Soil Moisture Colorized and Pathed by Date with LM.pdf "Tap Velocity Over Delta Soil Moisture Colorized and Pathed by Date")
 
 Which we also clearly see in the residuals:
 ![Heteroskedastic Residuals of LM Tap Velocity Over Delta Soil Moisture.png](outputDirectory/Heteroskedastic Residuals of LM Tap Velocity Over Delta Soil Moisture.png "Heteroskedastic Residuals of LM Tap Velocity Over Delta Soil Moisture.png")
 
 Autocorrelation, though statistically significant, does not appear to be strong after differencing, 
-![Autocorrelation](outputDirectory/Autocorrelation.pdf "Autocorrelation")
+![Autocorrelation](outputDirectory/Autocorrelation.png "Autocorrelation")
 
 Especially when compared to cross correlation:
 ![Changes in the Delta Soil Moisture actually FOLLOW (lag) changes in Tap Velocity](outputDirectory/Changes in the Delta Soil Moisture actually FOLLOW (lag) changes in Tap Velocity.pdf "Changes in the Delta Soil Moisture actually FOLLOW (lag) changes in Tap Velocity")
