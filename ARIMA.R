@@ -74,13 +74,18 @@ ggp
 ########################################################################################################
 #make ARIMA model
 #ARIMA models are defined for stationary time series.  Data here is non-stationary, presenting seasonality.
-#So we will diff the data:
+#First, I diff the response data:
 numdiffs <- ndiffs(tapDT$tapLatMeanDailySapVelocity)
 #output was 1 on 08/23/16
 
-tapDT$VsDiff1 <- diff(tapDT$tapLatMeanDailySapVelocity, differences=numdiffs)
+#Stationarize and then plot response data:
+tapDT[2:length(tapDT$tapLatMeanDailySapVelocity), VsDiff1 := diff(tapDT$tapLatMeanDailySapVelocity, differences=numdiffs)]
 tsggp <- ggplot(data = tapDT, aes(x=Date, y = VsDiff1)) + geom_line() + theme_bw() + labs(y = "Diffed Sap Flow Velocity (cm/day)", title = "Stationary Tap Velocity")
 tsggp
+
+#Plot auto correlation:
+acf(tapDT[-1,VsDiff1])
+
 
 #Read in external regressors:
 setwd("/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/RESEARCH ASSISTANTSHIP/HR PROJECT HYDRAULIC REDISTRIBUTION UA NSF/HR Regressions & Forecasting/input")
@@ -109,8 +114,17 @@ setkey(tapDT, Date)
 
 #Merge by Date primary key full outer join:
 regressDT <- merge(envDT, tapDT)
-
 regressDT
+
+#Diff explanatory variable:
+numdiffs <- ndiffs(regressDT$shallowMinusDeep)
+numdiffs
+#Console output = 1 08/30/16
+regressDT[2:length(regressDT$shallowMinusDeep), shallowMinusDeepDiff1 := diff(regressDT$shallowMinusDeep, differences = numdiffs)]
+
+#Plot cross correlation:
+#Ignoring first row since values are NA after diff()
+ccf(regressDT[-1,shallowMinusDeepDiff1], regressDT[-1,VsDiff1])
 
 #and now... MAKE ARIMA MODEL!
 arimaModel <- auto.arima(tapDT[1:300,VsDiff1], xreg = regressDT[1:300,shallowMinusDeep])
