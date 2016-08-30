@@ -17,7 +17,14 @@ Some interesting indications of both autocorellation and multimodality:
 Which we also clearly see in the residuals:
 ![Heteroskedastic Residuals of LM Tap Velocity Over Delta Soil Moisture.png](outputDirectory/Heteroskedastic Residuals of LM Tap Velocity Over Delta Soil Moisture.png "Heteroskedastic Residuals of LM Tap Velocity Over Delta Soil Moisture.png")
 
-Beginning work with ARIMA Forecasting:
+Autocorrelation, though statistically significant, does not appear to be strong after differencing, 
+![Autocorrelation](outputDirectory/Autocorrelation.png "Autocorrelation")
+
+Especially when compared to cross correlation:
+![Changes in the Delta Soil Moisture actually FOLLOW (lag) changes in Tap Velocity](outputDirectory/Changes in the Delta Soil Moisture actually FOLLOW (lag) changes in Tap Velocity.png "Changes in the Delta Soil Moisture actually FOLLOW (lag) changes in Tap Velocity")
+
+
+Exploratory work with ARIMA Forecasting (NEEDS TO BE UPDATED IN LIGHT OF NEW INFORMATION FROM CCF() AS SHOWN ABOVE):
 First make the data stationary, using diff() in R:
 (diff returns Value:
 If x is a vector of length n and differences = 1, then the computed result is equal to the successive differences x[(1+lag):n] - x[1:(n-lag)].)
