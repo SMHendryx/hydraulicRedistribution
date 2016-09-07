@@ -1,11 +1,11 @@
-#	TIME-SERIES REGRESSIONS AND FORECASTING: MEAN DAILY SAPFLOW DATA
+#	TIME-SERIES PLOTTING AND REGRESSIONS: MEAN DAILY SAPFLOW DATA
 #	Authored by Sean Hendryx
 #	While working at The Univerity of Arizona
 #	2016
 #########################################################################################################
 
 #Load packages:
-packages = c('ggplot2', 'data.table', 'dplyr', 'tools', 'plotly', 'forecast')
+packages = c('ggplot2', 'data.table', 'dplyr', 'tools', 'plotly')
 lapply(packages, library, character.only = TRUE)
 
 #Set working directory:
@@ -31,7 +31,7 @@ dailyDT <- DT[, .(VsInCmPerDay, Date), by = .(id, DOY)]
 
 #Compute daily mean for each individual meter and add to new column, meanDailySapVelocity:
 dailyDT[, meanDailySapVelocity := mean(na.omit(VsInCmPerDay)), by = .(id, Date)]
-dailyDT
+dailyDT 
 
 #Trim excess rows since now we only care about the daily mean of each sensor
 setkey(dailyDT, Date, id)
@@ -64,30 +64,9 @@ tapDT <- graphDT[tapVsLat =="tap"]
 latDT <- graphDT[tapVsLat =="lat"]
 
 
+################################################################################################################################################################################################################################################################################################################################
+# Read in environmental forcing data (soil moisture, air temp)
 
-alpha <- .4
-ggp <- ggplot(data = graphDT, aes(x=Date, y = tapLatMeanDailySapVelocity)) + geom_ribbon(data = tapDT, aes(x = as.Date(Date), ymin=tapLatMeanDailySapVelocity - SEMeanVs, ymax=tapLatMeanDailySapVelocity + SEMeanVs), alpha=alpha) + geom_line(data = tapDT, aes(x = as.Date(Date),y = tapLatMeanDailySapVelocity), colour = "blue")
-ggp <- ggp + geom_ribbon(data = latDT, aes(x = as.Date(Date), ymin=tapLatMeanDailySapVelocity - SEMeanVs, ymax=tapLatMeanDailySapVelocity + SEMeanVs), alpha=0.4) + geom_line(data = latDT, aes(x = as.Date(Date),y = tapLatMeanDailySapVelocity), colour = "red") + theme_bw()
-ggp <- ggp + labs(y = "Sap Flow Velocity (cm/day)")
-ggp
-
-########################################################################################################
-#make autoregressive/ARIMA model
-#ARIMA models are defined for stationary time series.  Data here is non-stationary, presenting seasonality.
-#First, I diff the response data:
-numdiffs <- ndiffs(tapDT$tapLatMeanDailySapVelocity)
-#output was 1 on 08/23/16
-
-#Stationarize and then plot response data:
-tapDT[2:length(tapDT$tapLatMeanDailySapVelocity), VsDiff1 := diff(tapDT$tapLatMeanDailySapVelocity, differences=numdiffs)]
-tsggp <- ggplot(data = tapDT, aes(x=Date, y = VsDiff1)) + geom_line() + theme_bw() + labs(y = "Diffed Sap Flow Velocity (cm/day)", title = "Stationary Tap Velocity")
-tsggp
-
-#Plot auto correlation:
-acf(tapDT[-1,VsDiff1])
-
-
-#Read in external regressors:
 setwd("/Users/seanhendryx/Google Drive/THE UNIVERSITY OF ARIZONA (UA)/RESEARCH ASSISTANTSHIP/HR PROJECT HYDRAULIC REDISTRIBUTION UA NSF/HR Regressions & Forecasting/input")
 #Read in data:
 envdf <- read.csv("environment.csv", header=TRUE, skip = 2, sep = ",")
@@ -114,29 +93,29 @@ setkey(tapDT, Date)
 
 #Merge by Date primary key full outer join:
 regressDT <- merge(envDT, tapDT)
-regressDT
 
-#Diff explanatory variable:
-numdiffs <- ndiffs(regressDT$shallowMinusDeep)
-numdiffs
-#Console output = 1 on 08/30/16
-regressDT[2:length(regressDT$shallowMinusDeep), shallowMinusDeepDiff1 := diff(regressDT$shallowMinusDeep, differences = numdiffs)]
-#plot diffed delta soil moisture:
-tsggp <- ggplot(data = regressDT, aes(x=Date, y = shallowMinusDeepDiff1)) + geom_line() + theme_bw() + labs(y = "Diffed Delta Soil Moisture", title = "Stationary Delta Soil Moisture (Shallow Minus Deep)")
-tsggp
+#Now make new datatable with the relevant variables:
+newDT <- regressDT[,.(Date, Year, DOY.x, precip..mm., shallowMinusDeep, maxAirTemp, minAirTemp, tapLatMeanDailySapVelocity)]
 
+#Read in more environmental forcing data which now includes VPD from Esther:
 
-#Plot cross correlation:
-#Ignoring first row since values are NA after diff()
-ccf(regressDT[-1,shallowMinusDeepDiff1], regressDT[-1,VsDiff1])
-#Quite interesting, changes in Delta soil moisture actually FOLLOW changes in sap velocity
+#Compute mean daily VPD
 
-ccfValues <- ccf(regressDT[-1,shallowMinusDeepDiff1], regressDT[-1,VsDiff1])
+# Extract daily LAI if Esther's data has it
 
-#and now... MAKE ARIMA MODEL!
-arimaModel <- auto.arima(tapDT[1:300,VsDiff1], xreg = regressDT[1:300,shallowMinusDeep])
+#Graph VPD simple time series
 
-forecasts <- forecast(arimaModel, h = 30, xreg = regressDT[301:331,shallowMinusDeep])
+# Regress Vs over VPD
+	#plot
 
-fggp <- autoplot(forecasts)
-fggp
+# Diff VPD and Vs since they have autocorrelation:
+
+# ccf() with VPD and Vs
+
+# Regress diffed VPD over Vs (so this shows how changes in VPD relate to changes in Vs)
+	#plot
+
+# Multiple linear regression of Vs as explained by VPD and LAI
+	#3d scatter plot
+
+# HYPOTHESIS: VPD and phenology control hydraulic descent and list in mesquites in the SRER	
